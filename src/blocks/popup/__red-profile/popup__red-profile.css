@@ -1,0 +1,17 @@
+.popup__red-profile {
+    color: #000;
+    max-width: 330px;
+    margin: 0 0 54px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@media all and (max-width: 768px) {
+    .popup__red-profile {
+        max-width: 239px;
+        margin: 0 0 75px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

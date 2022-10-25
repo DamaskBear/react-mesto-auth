@@ -1,0 +1,20 @@
+.elements__pic-bin {
+    background-image: url(../../../images/pic_bin.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 0;
+    display: block;
+    border: 0;
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.elements__pic-bin:hover {
+    opacity: .6;
+    cursor: pointer;
+}

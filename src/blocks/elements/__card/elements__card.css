@@ -1,0 +1,22 @@
+.elements__card {
+    max-width: 880px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
+    grid-template-rows: auto;
+    grid-gap: 20px 17px;
+    grid-auto-flow: row;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media all and (max-width: 425px) {
+    .elements__card {
+        max-width: 282px;
+        gap: 20px;
+    }
+    
+}
