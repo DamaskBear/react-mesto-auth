@@ -1,0 +1,15 @@
+.auth__btn {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    font-size: 18px;
+    line-height: 1.22;
+    color: var(--basic-white);
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity .6s;
+}
+  
+.auth__btn:hover {
+    opacity: .8;
+}

@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 
+const defaultState = { name: "", link: "" };
+
 function AddPlacePopup({ isOpen, onClose, onAddNewCard }) {
-  //const currentUser = useContext(CurrentUserContext);
-  const defaultState = { name: "", link: "" };
+  
   const [newCard, setNewCard] = useState(defaultState);
+
+  useEffect(() => {
+    setNewCard(defaultState);
+  }, [isOpen]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
