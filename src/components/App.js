@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory, BrowserRouter } from "react-router-dom";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import React from 'react';
 
@@ -202,19 +202,20 @@ function App() {
   };
 
   return (
+    <BrowserRouter>
     <CurrentUserContext.Provider value={currentUser}>
-    <div className="root">
+    
         <Header
           loggedIn={loggedIn}
           onLogout={handleLogout}/>
 
         <Switch>
           <Route path="/sign-up">
-            {<Register onRegister={handleRegister} />}
+            <Register onRegister={handleRegister} />
           </Route>
 
           <Route path="/sign-in">
-            {<Login onLogin={handleLogin} />}
+            <Login onLogin={handleLogin} />
           </Route>
 
           <ProtectedRoute path="/" loggedIn={loggedIn}>
@@ -269,9 +270,11 @@ function App() {
 
         <ImagePopup
          card={selectedCard}
-         onClose={closeAllPopups} />
-    </div>
+         onClose={closeAllPopups}
+         />
+    
     </CurrentUserContext.Provider>
+    </BrowserRouter>
   );
 }
 

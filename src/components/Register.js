@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import {initialValues} from '../utils/constants';
+import {initialValues} from '../utils/utils';
 
 function Register(props) {
   const [userData, setUserData] = useState(initialValues);

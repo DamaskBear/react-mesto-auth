@@ -55,3 +55,13 @@
 @import url(./blocks/popup/__input-error/popup__input-error.css);
 @import url(./blocks/popup/_error/popup_error_visible.css);
 @import url(./blocks/popup/__input/_type/popup__input_type_error.css);
+@import url(./blocks/popup/__info-icon/popup__info-icon.css);
+
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__btn/auth__btn.css);
+@import url(./blocks/auth/__fieldset/auth__fieldset.css);
+@import url(./blocks/auth/__form/auth__form.css);
+@import url(./blocks/auth/__input/auth__input.css);
+@import url(./blocks/auth/__link/auth__link.css);
+@import url(./blocks/auth/__submit/auth__submit.css);
+@import url(./blocks/auth/__title/auth__title.css);
