@@ -1,7 +1,7 @@
-function PopupWithForm({name, title, children, buttonText, isOpen, onClose, onSubmit, isRenderLoading}) {
+function PopupWithForm({name, title, children, buttonText, isOpen, onClose, onSubmit}) {
 
     const popupClassName = `popup popup_type_${name} ${isOpen ? 'popup_opened' : ""}`;
-    const sumbitButtonClassName = `popup__button ${isRenderLoading ? "disabled" : ''}`
+    const sumbitButtonClassName = 'popup__button';
     return (
         <div className={popupClassName}>
             <div className="popup__container">
@@ -13,7 +13,7 @@ function PopupWithForm({name, title, children, buttonText, isOpen, onClose, onSu
                     name={`${name}-form`}
                     onSubmit={onSubmit}
                     >
-                    {children}
+                        {children}
                     <button className={sumbitButtonClassName} type="submit">
                       {buttonText}    
                     </button>

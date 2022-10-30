@@ -49,4 +49,3 @@ export const getContent = (token) => {
       token,
     });
 };
-  

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Switch, Route, Redirect, useHistory, BrowserRouter } from "react-router-dom";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import React from 'react';
 
 import Header from './Header';
 import Main from './Main';
@@ -27,6 +26,7 @@ import errorIcon from "../images/error-signup.svg";
 function App() {
   const history = useHistory();
   //states
+  const [loggedIn, setLoggedIn] = useState(null);
   const [currentUser, setCurrentUser] = useState({});
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEdtitProfilePopupOpen, setIsEdtitProfilePopupOpen] = useState(false);
@@ -35,7 +35,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [deletedCard, setDeletedCard] = useState("");
-  const [loggedIn, setLoggedIn] = useState(null);
+  //const [loggedIn, setLoggedIn] = useState(null);
   const [infoContent, setInfoContent] = useState({ icon: null, text: null });
   const [isInfoOpen, setIsInfoOpen] = useState(false);
 
@@ -149,6 +149,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  //registration and login
   const handleRegister = (userData) => {
     return auth
       .registration(userData)
@@ -211,11 +212,11 @@ function App() {
 
         <Switch>
           <Route path="/sign-up">
-            <Register onRegister={handleRegister} />
+            {<Register onRegister={handleRegister} />}
           </Route>
 
           <Route path="/sign-in">
-            <Login onLogin={handleLogin} />
+            {<Login onLogin={handleLogin} />}
           </Route>
 
           <ProtectedRoute path="/" loggedIn={loggedIn}>
@@ -275,6 +276,7 @@ function App() {
     
     </CurrentUserContext.Provider>
     </BrowserRouter>
+    
   );
 }
 
