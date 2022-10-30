@@ -1,0 +1,14 @@
+.header__btn {
+    font-size: 18px;
+    line-height: 1.22;
+    background-color: transparent;
+    color: var(--basic-white);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.6s;
+}
+  
+.header__btn:hover {
+    opacity: 0.8;
+}

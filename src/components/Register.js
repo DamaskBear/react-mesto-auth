@@ -10,7 +10,6 @@ function Register(props) {
     setUserData(initialValues);
   }, []);
 
-
   const handleChangeInput = (evt) => {
     const { name, value } = evt.target;
     
@@ -22,7 +21,6 @@ function Register(props) {
 
     props.onRegister(userData);
   };
-
 
   return (
     <div className="auth">

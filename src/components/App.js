@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Switch, Route, Redirect, useHistory, BrowserRouter } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 import Header from './Header';
@@ -35,18 +35,18 @@ function App() {
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [deletedCard, setDeletedCard] = useState("");
-  //const [loggedIn, setLoggedIn] = useState(null);
   const [infoContent, setInfoContent] = useState({ icon: null, text: null });
   const [isInfoOpen, setIsInfoOpen] = useState(false);
 
   useEffect(() => {
+    if (!loggedIn) return;
     Promise.all([api.getInitialCards(), api.getUserInfo()])
       .then(([cardsData, userData]) => {
         setCards(cardsData);
-        setCurrentUser(userData);
+        setCurrentUser((state) => ({...state, ...userData}));
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     const checkToken = () => {
@@ -203,7 +203,6 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
     <CurrentUserContext.Provider value={currentUser}>
     
         <Header
@@ -275,8 +274,6 @@ function App() {
          />
     
     </CurrentUserContext.Provider>
-    </BrowserRouter>
-    
   );
 }
 
